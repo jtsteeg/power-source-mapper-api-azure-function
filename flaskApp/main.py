@@ -13,7 +13,7 @@ app = Flask(__name__)
 # cosmos db data
 url = os.environ['COSMOS_URI']
 key = os.environ['COSMOS_KEY']
-database_name = 'testPowerPlants'
+database_name = 'powerPlants-prod'
 container_name = 'powerPlants'
 admin_container_name = 'admins'
 
@@ -143,7 +143,7 @@ ma = Marshmallow(app)
 class PlantSchema(ma.Schema):
     class Meta:
         fields = ('id', 'name', 'coordinates',
-                  'outputMWH', 'fuelTypes', 'Renewable')
+                  'outputMWH', 'fuelTypes', 'renewable')
 
 
 plant_schema = PlantSchema()
